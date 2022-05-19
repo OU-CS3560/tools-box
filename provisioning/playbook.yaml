@@ -1,0 +1,33 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install essential tools
+      apt:
+        pkg:
+          - build-essential
+          - git
+          - curl
+          - wget
+    - name: Install editors
+      apt:
+        pkg:
+          - vim
+          - emacs
+    - name: Install more compilers and debugger
+      apt:
+        pkg:
+          - clang-12
+          - clang-tools
+          - gdb
+          - lldb
+    - name: Install build tools
+      apt:
+        pkg:
+          - cmake
+    - name: Install other tools
+      apt:
+        pkg:
+          - valgrind
+          - cppcheck
+          - doxygen
